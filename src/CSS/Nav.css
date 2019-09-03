@@ -26,11 +26,8 @@
     cursor: pointer;
   }
 
-  .cart{
-    height: 50%;
+  .cart, .menu{
     cursor: pointer;
   }
 
-  .menu{
-    cursor: pointer;
-  }
+  

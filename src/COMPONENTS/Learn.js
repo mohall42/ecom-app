@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Nav from './COMPONENTS/Nav'
+import Nav from './Nav'
 
 export class Learn extends Component {
     render() {

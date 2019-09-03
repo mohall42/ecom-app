@@ -45,7 +45,7 @@ export default function Nav(props) {
             onKeyDown={toggleDrawer(false)}
         >
             <List>
-                {["About", "Cart"].map((text, index) => (
+                {["About", "Cart"].map((text) => (
                     <ListItem button key={text}>
                         <ListItemText primary={text} />
                     </ListItem>
@@ -72,8 +72,12 @@ export default function Nav(props) {
 
                 </Badge>
 
-                <li><img className="menu" onClick={toggleDrawer(true)} src={menu} alt="menu"  ></img></li>
+                <li><img className="menu" onClick={toggleDrawer(true)} src={menu} alt="menu"></img></li>
+
+
             </ul>
+
+
 
             <Drawer anchor="right" open={state.right} onClose={toggleDrawer(false)}>
                 {sideList("right")}
