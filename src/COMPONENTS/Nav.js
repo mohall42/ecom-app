@@ -1,6 +1,6 @@
 import React from 'react'
 import Drawer from '@material-ui/core/Drawer'
-import Button from "@material-ui/core/Button";
+import Badge from '@material-ui/core/Badge'
 import List from "@material-ui/core/List";
 import ListItem from '@material-ui/core/ListItem'
 import ListItemText from "@material-ui/core/ListItemText";
@@ -14,18 +14,11 @@ import menu from '../IMAGES/menu.svg'
 const useStyles = makeStyles({
     list: {
         width: 350
-    },
-    fullList: {
-        width: "auto"
     }
 });
 
-export function TemporaryDrawer() {
 
-
-}
-
-export default function Nav() {
+export default function Nav(props) {
 
 
     const classes = useStyles();
@@ -61,7 +54,7 @@ export default function Nav() {
         </div>
     );
 
-
+    const { cartItems } = props;
 
     return (
 
@@ -72,17 +65,20 @@ export default function Nav() {
 
             <ul className="items">
 
-                <li><img className="cart" src={cart} alt="cart" ></img></li>
-                <li><img className="menu" onClick={toggleDrawer(true)} src={menu} alt="menu"  ></img></li>
 
+                <Badge className="classes.margin" badgeContent={cartItems} color="primary">
+
+                    <li><img className="cart" src={cart} alt="cart" ></img></li>
+
+                </Badge>
+
+                <li><img className="menu" onClick={toggleDrawer(true)} src={menu} alt="menu"  ></img></li>
             </ul>
 
             <Drawer anchor="right" open={state.right} onClose={toggleDrawer(false)}>
                 {sideList("right")}
             </Drawer>
         </div>
-
-
 
     )
 
