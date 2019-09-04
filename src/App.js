@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-
 import './CSS/App.css';
 import Nav from './COMPONENTS/Nav'
 import Items from './COMPONENTS/Items'
-import Back from "./IMAGES/Back.svg";
+import Footer from './COMPONENTS/Footer'
 
 class App extends Component {
 
@@ -22,20 +21,11 @@ class App extends Component {
     return (
       <div>
         <Nav cartItems={this.state.cartItems} />
-        <div className="back">
 
-          <img src={Back} alt="Back" />
+        <Items />
 
-        </div>
-        <div className="content">
+        <Footer />
 
-          <Items />
-
-        </div>
-
-        <div className="addBox">
-          <h2>Add item button here</h2>
-        </div>
       </div>
     );
 

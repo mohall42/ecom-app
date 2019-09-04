@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../CSS/Items.css'
 import { withStyles } from '@material-ui/core/styles'
 import { Grid } from '@material-ui/core'
 
@@ -32,21 +33,25 @@ export class Items extends Component {
         const { classes } = this.props;
 
         return (
-            <div className={classes.root}>
-                <Grid container spacing={1}>
-                    <Grid item lg={4}>
-                        <h2>Item here</h2>
-                    </Grid>
-                    <Grid item lg={4}>
-                        <h2>Item here</h2>
-                    </Grid>
-                    <Grid item lg={4}>
-                        <h2>Item here</h2>
-                    </Grid>
+            <div className="item-container">
 
 
-                </Grid>
+                <div className={classes.root}>
+                    <Grid container spacing={1}>
+                        <Grid item lg={4}>
+                            <h2>Item here</h2>
+                        </Grid>
+                        <Grid item lg={4}>
+                            <h2>Item here</h2>
+                        </Grid>
+                        <Grid item lg={4}>
+                            <h2>Item here</h2>
+                        </Grid>
 
+
+                    </Grid>
+
+                </div>
             </div>
         )
     }

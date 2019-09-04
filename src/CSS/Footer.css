@@ -1,0 +1,19 @@
+.footer-main{
+    background-color: #323232;
+    height: 15vh;
+    width: 100%;
+    /* position: absolute;
+    bottom: 0; */
+}
+
+.footer-body{
+    display: flex;
+    max-width: 1568px;
+    padding: 0 5px;
+    margin: 0 auto;
+   
+}
+
+.footer-body p{
+    color: white;
+}
