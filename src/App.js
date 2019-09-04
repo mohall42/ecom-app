@@ -1,35 +1,20 @@
-import React, { Component } from 'react'
-import './CSS/App.css';
-import Nav from './COMPONENTS/Nav'
-import Items from './COMPONENTS/Items'
-import Footer from './COMPONENTS/Footer'
-
-class App extends Component {
-
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      cartItems: 10,
-    }
-  }
+import React from 'react';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import './CSS/index.css';
+import Main from './Main';
+import Cart from './Cart';
 
 
-  render() {
 
+function App() {
+    return(
 
-    return (
-      <div>
-        <Nav cartItems={this.state.cartItems} />
-
-        <Items />
-
-        <Footer />
-
-      </div>
-    );
-
-  }
+        <Router>
+            <Route path="/" exact  component={Main}/>
+            <Route path="/cart" exact  component={Cart}/>
+         </Router>
+    )
 }
 
-export default App;
+export default App
+    

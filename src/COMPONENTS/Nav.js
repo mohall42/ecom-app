@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Drawer from '@material-ui/core/Drawer'
 import Badge from '@material-ui/core/Badge'
 import List from "@material-ui/core/List";
@@ -47,8 +48,8 @@ export default function Nav(props) {
             <List>
                 {["About", "Cart"].map((text) => (
                     <ListItem button key={text}>
-                        <ListItemText primary={text} />
-                    </ListItem>
+{/*                     <Link to={`/ ${text.toLoweCase}`}><ListItemText primary={text} /></Link>
+ */}                    </ListItem>
                 ))}
             </List>
         </div>
