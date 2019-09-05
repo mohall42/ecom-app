@@ -48,8 +48,10 @@ export default function Nav(props) {
             <List>
                 {["About", "Cart"].map((text) => (
                     <ListItem button key={text}>
-{/*                     <Link to={`/ ${text.toLoweCase}`}><ListItemText primary={text} /></Link>
- */}                    </ListItem>
+                        {/*                         {console.log("Card text check", `/${text.toLowerCase()}`)} */}
+
+                        <Link to={`/${text.toLowerCase()}`} style={{ textDecoration: 'none', color: 'black' }}><ListItemText primary={text} /></Link>
+                    </ListItem>
                 ))}
             </List>
         </div>
@@ -68,8 +70,7 @@ export default function Nav(props) {
 
 
                 <Badge className="classes.margin" badgeContent={cartItems} color="primary">
-
-                    <li><img className="cart" src={cart} alt="cart" ></img></li>
+                    <Link to="/cart"><li><img className="/cart" src={cart} alt="cart" ></img></li></Link>
 
                 </Badge>
 
