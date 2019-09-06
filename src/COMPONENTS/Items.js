@@ -10,6 +10,7 @@ const styles = theme => ({
     root: {
         flexGrow: 1,
 
+
     },
     paper: {
         padding: theme.spacing(2),
@@ -40,7 +41,7 @@ export class Items extends Component {
 
 
                 <div className={classes.root}>
-                    <Grid container alignContent="center" spacing={1}>
+                    <Grid container spacing={1}>
                         <Grid item lg={1}>
 
                             <Grid container direction='column'>
@@ -54,19 +55,23 @@ export class Items extends Component {
                         <Grid item lg={4}>
 
                             <Grid container direction='column' >
-                                <Grid item lg={4}>
+                                <Grid item className="right-col-box" lg={4}>
                                     <ColorPicker />
 
 
 
                                 </Grid>
-                                <Grid item lg={4}>
+                                <Grid item className="right-col-box" lg={4}>
 
-                                    <h2>Item here</h2>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Vero id reprehenderit soluta culpa,
+                                    fugiat cupiditate sunt veniam eius recusandae doloremque!
+                                    Incidunt ducimus esse aliquam repellat magnam nostrum,
+                                    culpa rerum suscipit!</p>
 
 
                                 </Grid>
-                                <Grid item lg={4}>
+                                <Grid item className="right-col-box" lg={4}>
 
 
                                     <button className="addBtn"> <h2>Add to Cart</h2> </button>

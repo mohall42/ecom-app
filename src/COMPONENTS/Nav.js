@@ -63,7 +63,8 @@ export default function Nav(props) {
 
         <div className="body">
             <div className="logo">
-                <h2>ECOM</h2>
+                <Link to='/' style={{ textDecoration: 'none', color: 'black' }}><h2>ECOM</h2> </Link>
+
             </div>
 
             <ul className="items">

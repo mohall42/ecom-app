@@ -1,6 +1,6 @@
 .footer-main{
     background-color: #323232;
-    height: 15vh;
+    min-height: 15vh;
     width: 100%;
   
 }
@@ -15,4 +15,8 @@
 
 .footer-body p{
     color: white;
+}
+
+.ft-col p{
+    max-width: 20rem;
 }

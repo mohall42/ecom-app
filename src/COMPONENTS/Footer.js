@@ -24,17 +24,25 @@ function Footer(props) {
 
             <div className="footer-body">
                 <Grid container spacing={2}>
-                    <Grid item sm={3} xs={12}>
-                        <p>Footer text here</p>
+                    <Grid className="ft-col" item sm={6} md={3} xs={12}>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Rerum ab iure dolor fuga,
+                        suscipit rem minus quae expedita omnis ducimus. </p>
                     </Grid>
-                    <Grid item sm={3} xs={12}>
-                        <p>Footer text here</p>
+                    <Grid className="ft-col" item sm={6} md={3} xs={12}>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Rerum ab iure dolor fuga,
+                        suscipit rem minus quae expedita omnis ducimus. </p>
                     </Grid>
-                    <Grid item sm={3} xs={12}>
-                        <p>Footer text here</p>
+                    <Grid className="ft-col" item sm={6} md={3} xs={12}>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Rerum ab iure dolor fuga,
+                        suscipit rem minus quae expedita omnis ducimus. </p>
                     </Grid>
-                    <Grid item sm={3} xs={12}>
-                        <p>Footer text here</p>
+                    <Grid className="ft-col" item sm={6} md={3} xs={12}>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                            Rerum ab iure dolor fuga,
+                        suscipit rem minus quae expedita omnis ducimus. </p>
                     </Grid>
 
                 </Grid>
