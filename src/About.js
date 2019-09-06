@@ -1,20 +1,29 @@
 import React, { Component } from 'react'
-import moduleName from 'module'
+import { Container, Grid } from '@material-ui/core'
+import './CSS/About.css'
 import Nav from './COMPONENTS/Nav'
 import Footer from './COMPONENTS/Footer'
 
 
-export class Learn extends Component {
+export class About extends Component {
     render() {
         return (
             <div>
                 <Nav />
 
-                <div className="about-container">
+                <Container>
+                    <Grid container>
 
-                    <h1>About section here</h1>
+                        <Grid className="about-col" item md={6}>
+                            <h2>Section 1</h2>
+                        </Grid>
 
-                </div>
+                        <Grid className="about-col" item md={6}>
+                            <h2>Section 2</h2>
+                        </Grid>
+                    </Grid>
+
+                </Container>
 
                 <Footer />
 
@@ -23,4 +32,4 @@ export class Learn extends Component {
     }
 }
 
-export default Learn
+export default About

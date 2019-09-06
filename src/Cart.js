@@ -9,6 +9,7 @@ const styles = {
     root: {
         border: 1,
         borderRadius: 3,
+
     },
 };
 
@@ -29,7 +30,9 @@ export class Cart extends Component {
             <div>
                 <Nav />
                 <Container fixed className={classes.root}>
-                    <p>Youre in the cart</p>
+                    <div className="cart-container">
+
+                    </div>
                 </Container>
                 <Footer />
 
