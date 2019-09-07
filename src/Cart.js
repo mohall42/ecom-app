@@ -10,6 +10,7 @@ const styles = {
         border: 1,
         borderRadius: 3,
 
+
     },
 };
 
@@ -29,10 +30,11 @@ export class Cart extends Component {
         return (
             <div>
                 <Nav />
-                <Container fixed className={classes.root}>
-                    <div className="cart-container">
+                <Container fixed maxWidth="xl" className={classes.root, "cart-container"} >
+                    <div className="cart-box">
 
                     </div>
+
                 </Container>
                 <Footer />
 

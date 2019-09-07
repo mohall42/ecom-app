@@ -47,11 +47,13 @@ export default function Nav(props) {
         >
             <List>
                 {["About", "Cart"].map((text) => (
-                    <ListItem button key={text}>
-                        {/*                         {console.log("Card text check", `/${text.toLowerCase()}`)} */}
+                    <Link to={`/${text.toLowerCase()}`} key={text} style={{ textDecoration: 'none', color: 'black', fontFamily: "'Oswald', sansSerif" }}  >
+                        <ListItem button >
 
-                        <Link to={`/${text.toLowerCase()}`} style={{ textDecoration: 'none', color: 'black' }}><ListItemText primary={text} /></Link>
-                    </ListItem>
+
+                            <ListItemText primary={text} />
+                        </ListItem>
+                    </Link>
                 ))}
             </List>
         </div>

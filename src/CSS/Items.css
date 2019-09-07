@@ -1,5 +1,6 @@
 .item-container{
     
+    display: block;
     height: 92.5vh;
     max-width: 1440px;
     margin: 0 auto;
@@ -7,9 +8,36 @@
 
 }
 
+
+.left-col-box {
+  
+    display: flex;
+    justify-content: center;
+    margin-left: 5%;
+    float:left;
+    height: 92.5vh;
+    transform: rotate(-180deg);
+    
+   
+ 
+}
+
+.left-col-box h1{
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 5px;
+    writing-mode: vertical-lr;
+    margin: auto auto;
+}
+
 .right-col-box{
-    min-height: 20rem;
-    min-width: 20rem;
+    
+    
+    margin: auto auto;
+    min-height: calc(92.5vh / 3);
+}
+
+.right-col-box p{
+    font-family: 'Oswald', sans-serif;
 }
 
 .addBtn{

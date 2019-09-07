@@ -1,3 +1,10 @@
 .cart-container{
     height: 97.5vh;
 }
+
+.cart-box{
+     
+    outline-style: solid;
+    outline-width: 4px;
+    outline-color: #323232;
+}
