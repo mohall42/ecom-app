@@ -58,7 +58,7 @@ export class Items extends Component {
                             <Grid item className="right-col-box" >
 
 
-                                <button className="addBtn"> <h2>Add to Cart</h2> </button>
+                                <button className="addBtn" onClick={this.props.updateCart}> <h2>Add to Cart</h2> </button>
 
 
                             </Grid>

@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 });
 
 
-export default function Nav(props) {
+export default function Nav (props) {
 
 
     const classes = useStyles();
@@ -59,7 +59,7 @@ export default function Nav(props) {
         </div>
     );
 
-    const { cartItems } = props;
+    
 
     return (
 
@@ -72,7 +72,7 @@ export default function Nav(props) {
             <ul className="items">
 
 
-                <Badge className="classes.margin" badgeContent={cartItems} color="primary">
+                <Badge className="classes.margin" badgeContent={localStorage.getItem("cartItems")} color="primary">
                     <Link to="/cart"><li><img className="/cart" src={cart} alt="cart" ></img></li></Link>
 
                 </Badge>
