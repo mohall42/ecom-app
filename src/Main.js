@@ -9,38 +9,32 @@ class App extends Component {
     super(props)
 
     this.state = {
-      cartItems: localStorage.getItem("cart"),
+      cartValue: localStorage.getItem('cartValue'),
+      
+
     }
 
-    this.updateCart = this.updateCart.bind(this);
+    this.updateCartVal = this.updateCartVal.bind(this);
   }
 
-    /* componentDidMount(){
-     
-      const notNull = localStorage.getItem("cart") === "true";
-      const value = notNull ? localStorage.getItem("cart") : 0;
+   
 
-      this.setState({cartItems: value});
-      localStorage.setItem('cartItems', value);
-    } */
-
-    updateCart = () => {
-      let cartItems = localStorage.getItem('cartItems')
-      cartItems++;
-      localStorage.setItem('cartItems', cartItems);
-      this.setState({cartItems: cartItems});
+    updateCartVal = () => {
+      let cartValue = localStorage.getItem('cartValue');
+      cartValue++;
+      localStorage.setItem('cartValue', cartValue);
+      this.setState({cartValue: cartValue});
 
     }
     
     render() {
-      
       
 
     return (
       <div>
         <Nav cartItems={this.state.cartItems} />
 
-        <Items updateCart={this.updateCart} />
+        <Items updateCartVal={this.updateCartVal} />
 
         <Footer />
 

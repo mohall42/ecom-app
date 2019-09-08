@@ -18,10 +18,16 @@ export class Cart extends Component {
 
     constructor(props) {
         super(props)
-
+    
         this.state = {
-
+             
         }
+
+        this.clearCartVal = this.clearCartVal.bind(this);
+    }
+    
+    clearCartVal = () =>{
+        localStorage.setItem('cartValue', 0)
     }
 
     render() {
@@ -32,6 +38,8 @@ export class Cart extends Component {
                 <Nav />
                 <Container fixed maxWidth="xl" className={classes.root, "cart-container"} >
                     <div className="cart-box">
+
+                        <button onClick={this.clearCartVal}>Check Out</button>
 
                     </div>
 

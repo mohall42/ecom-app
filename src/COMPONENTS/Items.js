@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import '../CSS/Items.css'
 import Watch from '../IMAGES/Watch.png'
 import ColorPicker from './ColorPicker'
-import { Grid } from '@material-ui/core'
+import { Grid, Modal, withStyles } from '@material-ui/core'
 
 
+const styles = {
+    modal: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+
+    },
+};
 
 
 export class Items extends Component {
@@ -13,11 +22,25 @@ export class Items extends Component {
         super(props)
 
         this.state = {
-
+            open: false,
         }
+
+        this.handleClose = this.handleClose.bind(this);
+        this.handleOpen = this.handleOpen.bind(this);
+    }
+
+    handleOpen = () =>{
+        this.props.updateCartVal();
+        this.setState({open: true})
+    }
+    
+    handleClose = () => {
+        this.setState({open : false})
     }
 
     render() {
+
+        const { classes } = this.props;
 
         return (
             <div>
@@ -58,7 +81,7 @@ export class Items extends Component {
                             <Grid item className="right-col-box" >
 
 
-                                <button className="addBtn" onClick={this.props.updateCart}> <h2>Add to Cart</h2> </button>
+                                <button className="addBtn" onClick={this.handleOpen}> <h2>Add to Cart</h2> </button>
 
 
                             </Grid>
@@ -70,9 +93,25 @@ export class Items extends Component {
 
 
                 </div>
+                <Modal
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+        open={this.state.open}
+        onClose={this.handleClose}
+      >
+
+            <div> 
+                <h1 id='simple-modal-title'>This is a test</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolore officiis incidunt nesciunt non!</p>
+
+            
+            </div>
+
+      </Modal>
+                    
             </div>
         )
     }
 }
 
-export default Items
+export default withStyles(styles)(Items)

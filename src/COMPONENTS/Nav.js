@@ -49,8 +49,6 @@ export default function Nav (props) {
                 {["About", "Cart"].map((text) => (
                     <Link to={`/${text.toLowerCase()}`} key={text} style={{ textDecoration: 'none', color: 'black', fontFamily: "'Oswald', sansSerif" }}  >
                         <ListItem button >
-
-
                             <ListItemText primary={text} />
                         </ListItem>
                     </Link>
@@ -72,7 +70,7 @@ export default function Nav (props) {
             <ul className="items">
 
 
-                <Badge className="classes.margin" badgeContent={localStorage.getItem("cartItems")} color="primary">
+                <Badge className="classes.margin" badgeContent={localStorage.getItem("cartValue")} color="primary">
                     <Link to="/cart"><li><img className="/cart" src={cart} alt="cart" ></img></li></Link>
 
                 </Badge>
@@ -81,7 +79,7 @@ export default function Nav (props) {
 
 
             </ul>
-
+                
 
 
             <Drawer anchor="right" open={state.right} onClose={toggleDrawer(false)}>
