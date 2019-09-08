@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../CSS/Items.css'
 import Watch from '../IMAGES/Watch.png'
+import Close from '../IMAGES/close.svg'
 import ColorPicker from './ColorPicker'
 import { Grid, Modal, withStyles } from '@material-ui/core'
 
@@ -11,6 +12,7 @@ const styles = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        position: 'relative',
 
     },
 };
@@ -29,13 +31,23 @@ export class Items extends Component {
         this.handleOpen = this.handleOpen.bind(this);
     }
 
-    handleOpen = () =>{
+    handleOpen = () => {
+        let cartVal = localStorage.getItem('cartValue');
+
+        if (cartVal == 2) {
+            console.log("The modal should open now")
+            this.setState({ open: true })
+        }
+
         this.props.updateCartVal();
-        this.setState({open: true})
+
+
     }
-    
+
+
+
     handleClose = () => {
-        this.setState({open : false})
+        this.setState({ open: false })
     }
 
     render() {
@@ -94,21 +106,25 @@ export class Items extends Component {
 
                 </div>
                 <Modal
-        aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
-        open={this.state.open}
-        onClose={this.handleClose}
-      >
+                    aria-labelledby="simple-modal-title"
+                    aria-describedby="simple-modal-description"
+                    open={this.state.open}
+                    onClose={this.handleClose}
+                    className={classes.modal}
+                >
 
-            <div> 
-                <h1 id='simple-modal-title'>This is a test</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod dolore officiis incidunt nesciunt non!</p>
+                    <div className="modal-item" >
+                        <img onClick={this.handleClose} src={Close} alt="close" style={{ alignSelf: "flex-end" }} />
+                        <h1 id='simple-modal-title'>Quite a few Items in your cart..</h1>
 
-            
-            </div>
+                        <Link to='/cart'><p>go to cart</p></Link>
 
-      </Modal>
-                    
+
+
+                    </div>
+
+                </Modal>
+
             </div>
         )
     }

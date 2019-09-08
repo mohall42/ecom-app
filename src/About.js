@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Grid } from '@material-ui/core'
+import { Container } from '@material-ui/core'
 import './CSS/About.css'
 import Nav from './COMPONENTS/Nav'
 import Footer from './COMPONENTS/Footer'
@@ -11,17 +11,22 @@ export class About extends Component {
             <div>
                 <Nav />
 
-                <Container>
-                    <Grid container>
+                <Container fixed maxWidth="xl" className="about-container">
+                    <div className="learn-more">
+                        <h2>Learn More</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Sunt minima commodi ut aperiam at iusto accusamus veniam officia,
+                        animi distinctio libero omnis sed quod tenetur amet quis non pariatur quasi!</p>
+                    </div>
 
-                        <Grid className="about-col" item md={6}>
-                            <h2>Section 1</h2>
-                        </Grid>
+                    <div className="our-mission">
+                        <h2>Our Mission</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        Sunt minima commodi ut aperiam at iusto accusamus veniam officia,
+                        animi distinctio libero omnis sed quod tenetur amet quis non pariatur quasi!</p>
+                    </div>
 
-                        <Grid className="about-col" item md={6}>
-                            <h2>Section 2</h2>
-                        </Grid>
-                    </Grid>
+
 
                 </Container>
 

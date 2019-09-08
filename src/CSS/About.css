@@ -1,3 +1,6 @@
-.about-col{
-    height: 92.5vh;
+.about-container{
+    height: 90vh;
+    border-right: thick solid #000;
+    margin-bottom: 1rem;
+    font-family: inherit; 
 }

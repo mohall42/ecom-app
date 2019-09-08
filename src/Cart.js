@@ -18,16 +18,18 @@ export class Cart extends Component {
 
     constructor(props) {
         super(props)
-    
+
         this.state = {
-             
+
         }
 
         this.clearCartVal = this.clearCartVal.bind(this);
     }
-    
-    clearCartVal = () =>{
-        localStorage.setItem('cartValue', 0)
+
+    clearCartVal = () => {
+        /*  localStorage.setItem('cartValue', 0) */
+
+        localStorage.removeItem('cartValue');
     }
 
     render() {
