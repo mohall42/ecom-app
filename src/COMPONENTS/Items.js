@@ -4,7 +4,7 @@ import '../CSS/Items.css'
 import Watch from '../IMAGES/Watch.png'
 import Close from '../IMAGES/close.svg'
 import ColorPicker from './ColorPicker'
-import { Grid, Modal, withStyles } from '@material-ui/core'
+import { Grid, Modal, withStyles, Radio, RadioGroup, FormControl, FormControlLabel, FormLabel } from '@material-ui/core'
 
 
 const styles = {
@@ -25,10 +25,12 @@ export class Items extends Component {
 
         this.state = {
             open: false,
+            sizeValue: '',
         }
 
         this.handleClose = this.handleClose.bind(this);
         this.handleOpen = this.handleOpen.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleOpen = () => {
@@ -40,14 +42,15 @@ export class Items extends Component {
         }
 
         this.props.updateCartVal();
-
-
     }
-
 
 
     handleClose = () => {
         this.setState({ open: false })
+    }
+
+    handleChange = (event) => {
+        this.setState({ sizeValue: event.target.value});
     }
 
     render() {
@@ -87,6 +90,24 @@ export class Items extends Component {
                                 fugiat cupiditate sunt veniam eius recusandae doloremque!
                                 Incidunt ducimus esse aliquam repellat magnam nostrum,
                                         culpa rerum suscipit!</p>
+
+
+                            </Grid>
+                            <Grid item className="right-col-box">
+                                <FormControl>
+
+                                    <FormLabel component="legend">Size</FormLabel>
+                                    <RadioGroup aria-label="gender" name="Watch Size" value={this.state.sizeValue} onChange={this.state.handleChange} >
+                                        <FormControlLabel value={38} control={<Radio/>} label='38\" ' />
+                                        <FormControlLabel value={42} control={<Radio/>} label='38\" ' />
+
+                                    
+                                    </RadioGroup>
+
+                                </FormControl>
+
+
+
 
 
                             </Grid>
