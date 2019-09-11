@@ -1,23 +1,11 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import footer from '../CSS/Footer.css'
+import '../CSS/Footer.css'
 import { Grid } from '@material-ui/core'
 
 
-const useStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1,
-    },
-    paper: {
-        padding: theme.spacing(2),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
-    },
-}));
 
 
 function Footer(props) {
-    const classes = useStyles();
 
     return (
         <div className="footer-main">

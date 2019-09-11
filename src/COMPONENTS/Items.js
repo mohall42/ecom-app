@@ -33,7 +33,7 @@ export class Items extends Component {
     handleOpen = () => {
         let cartVal = localStorage.getItem('cartValue');
 
-        if (cartVal == 2) {
+        if (cartVal === 2) {
             console.log("The modal should open now")
             this.setState({ open: true })
         }

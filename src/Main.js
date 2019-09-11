@@ -10,27 +10,28 @@ class App extends Component {
 
     this.state = {
       cartValue: localStorage.getItem('cartValue'),
-      
+
 
     }
 
     this.updateCartVal = this.updateCartVal.bind(this);
   }
 
-   
 
-    updateCartVal = () => {
-      let cartValue = localStorage.getItem('cartValue');
-      cartValue++;
-      localStorage.setItem('cartValue', cartValue);
-      this.setState({cartValue: cartValue});
 
-    }
-    
-    render() {
-      
+  updateCartVal = () => {
+    let cartValue = localStorage.getItem('cartValue');
+    cartValue++;
+    localStorage.setItem('cartValue', cartValue);
+    this.setState({ cartValue: cartValue });
+
+  }
+
+  render() {
+
 
     return (
+
       <div>
         <Nav cartItems={this.state.cartItems} />
 
