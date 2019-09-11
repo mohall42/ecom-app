@@ -25,12 +25,9 @@ export class Items extends Component {
 
         this.state = {
             open: false,
-            sizeValue: '',
+            sizeValue: "38",
         }
 
-        this.handleClose = this.handleClose.bind(this);
-        this.handleOpen = this.handleOpen.bind(this);
-        this.handleChange = this.handleChange.bind(this);
     }
 
     handleOpen = () => {
@@ -50,7 +47,10 @@ export class Items extends Component {
     }
 
     handleChange = (event) => {
-        this.setState({ sizeValue: event.target.value});
+
+        this.setState({ sizeValue: event.target.value });
+        /* console.log(this.state.sizeValue)
+ */
     }
 
     render() {
@@ -69,7 +69,7 @@ export class Items extends Component {
 
 
 
-                    <Grid container spacing={3}>
+                    <Grid container spacing={2}>
 
 
                         <Grid item align="center" lg={7}>
@@ -89,26 +89,19 @@ export class Items extends Component {
                                 Vero id reprehenderit soluta culpa,
                                 fugiat cupiditate sunt veniam eius recusandae doloremque!
                                 Incidunt ducimus esse aliquam repellat magnam nostrum,
-                                        culpa rerum suscipit!</p>
+                                culpa rerum suscipit!</p>
 
 
                             </Grid>
                             <Grid item className="right-col-box">
-                                <FormControl>
-
+                                <FormControl component="fieldset" >
                                     <FormLabel component="legend">Size</FormLabel>
-                                    <RadioGroup aria-label="gender" name="Watch Size" value={this.state.sizeValue} onChange={this.state.handleChange} >
-                                        <FormControlLabel value={38} control={<Radio/>} label='38\" ' />
-                                        <FormControlLabel value={42} control={<Radio/>} label='38\" ' />
-
-                                    
+                                    {/*  <h2>Size</h2> */}
+                                    <RadioGroup aria-label="watch-size" name="Watch Size" value={this.state.sizeValue} onChange={this.handleChange} row >
+                                        <FormControlLabel value="38" control={<Radio />} label='38"' />
+                                        <FormControlLabel value="42" control={<Radio />} label='42"' />
                                     </RadioGroup>
-
                                 </FormControl>
-
-
-
-
 
                             </Grid>
                             <Grid item className="right-col-box" >

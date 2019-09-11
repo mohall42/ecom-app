@@ -27,18 +27,18 @@ export class ColorPicker extends Component {
     render() {
 
         return (
-            <div className="color-body">
-                <div className="colors">
-                    {this.state.colors.map((item) => {
 
-                        return (
+            <div className="colors">
+                {this.state.colors.map((item) => {
 
-                            <div onClick={this.handleClick} id={`${item.key}`} className="color-box" key={`${item.key}`} style={{ "backgroundColor": `${item.value}` }}></div>
-                        )
+                    return (
 
-                    })}
-                </div>
+                        <div onClick={this.handleClick} id={`${item.key}`} className="color-box" key={`${item.key}`} style={{ "backgroundColor": `${item.value}` }}></div>
+                    )
+
+                })}
             </div>
+
         )
     }
 }
