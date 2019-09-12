@@ -9,7 +9,7 @@ export class About extends Component {
     render() {
         return (
             <div>
-                <Nav />
+
 
                 <Container fixed maxWidth="xl" className="about-container">
                     <div className="learn-more aboutItem">

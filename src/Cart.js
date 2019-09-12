@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Nav from './COMPONENTS/Nav'
 import Footer from './COMPONENTS/Footer'
 import { withStyles } from '@material-ui/core';
 import Container from '@material-ui/core/Container'
@@ -27,9 +26,9 @@ export class Cart extends Component {
     }
 
     clearCartVal = () => {
-        /*  localStorage.setItem('cartValue', 0) */
+        localStorage.setItem('cartValue', '')
 
-        localStorage.removeItem('cartValue');
+
     }
 
     render() {
@@ -37,7 +36,7 @@ export class Cart extends Component {
         const { classes } = this.props;
         return (
             <div>
-                <Nav />
+
                 <Container fixed maxWidth="xl" className={classes.root, "cart-container"} >
                     <div className="cart-box">
 
@@ -46,8 +45,6 @@ export class Cart extends Component {
                     </div>
 
                 </Container>
-                <Footer />
-
             </div>
         )
     }

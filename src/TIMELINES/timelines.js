@@ -15,11 +15,26 @@ const getDefaultTimeline = (node, delay) => {
 
 const getHomeTimeline = (node, delay) => {
     const timeline = new Timeline({ paused: true });
-    const texts = node.querySelectorAll('h1 > div');
+    const divs = node.querySelectorAll('div');
 
     timeline
         .from(node, 0, { display: 'none', autoAlpha: 0, delay })
-        .staggerFrom(texts, 0.375, { autoAlpha: 0, x: -25, ease: Power1.easeOut }, 0.125);
+        .staggerFrom(divs, 1.5, { autoAlpha: 0, x: -25, ease: Power1.easeOut }, 0.125);
+
+    return timeline;
+}
+
+
+const getAboutTimeline = (node, delay) => {
+    const timeline = new Timeline({ paused: true });
+    const divs = node.querySelectorAll('div');
+    const titles = node.querySelectorAll('div h1');
+    const body = node.querySelectorAll('div h1 p');
+
+    timeline
+        .from(node, 0, { display: 'none', autoAlpha: 0, delay })
+        .staggerFrom([divs, titles, body], 1.5, { autoAlpha: 0, x: -30, ease: Power1.easeOut }, 1.5);
+
 
     return timeline;
 }
@@ -28,8 +43,9 @@ export const play = (pathname, node, appears) => {
     const delay = appears ? 0 : 0.5;
     let timeline
 
-    if (pathname === '/')
-        timeline = getHomeTimeline(node, delay);
+    if (pathname === '/') timeline = getHomeTimeline(node, delay);
+
+    else if (pathname == '/about') timeline = getAboutTimeline(node, delay);
     else
         timeline = getDefaultTimeline(node, delay);
 

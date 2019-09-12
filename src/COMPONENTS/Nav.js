@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Drawer from '@material-ui/core/Drawer'
 import Badge from '@material-ui/core/Badge'
 import List from "@material-ui/core/List";
@@ -19,7 +19,7 @@ const useStyles = makeStyles({
 });
 
 
-export default function Nav (props) {
+export default function Nav(props) {
 
 
     const classes = useStyles();
@@ -47,31 +47,31 @@ export default function Nav (props) {
         >
             <List>
                 {["About", "Cart"].map((text) => (
-                    <Link to={`/${text.toLowerCase()}`} key={text} style={{ textDecoration: 'none', color: 'black', fontFamily: "'Oswald', sansSerif" }}  >
+                    <NavLink strict exact to={`/${text.toLowerCase()}`} key={text} style={{ textDecoration: 'none', color: 'black', fontFamily: "'Oswald', sansSerif" }}  >
                         <ListItem button >
                             <ListItemText primary={text} />
                         </ListItem>
-                    </Link>
+                    </NavLink>
                 ))}
             </List>
         </div>
     );
 
-    
+
 
     return (
 
         <div className="body">
             <div className="logo">
-                <Link to='/' style={{ textDecoration: 'none', color: 'black' }}><h2>ECOM</h2> </Link>
+                <NavLink to='/' style={{ textDecoration: 'none', color: 'black' }}><h2>ECOM</h2> </NavLink>
 
             </div>
 
             <ul className="items">
 
 
-                <Badge className="classes.margin" badgeContent={localStorage.getItem("cartValue")} color="primary">
-                    <Link to="/cart"><li><img className="/cart" src={cart} alt="cart" ></img></li></Link>
+                <Badge className="classes.margin" badgeContent={props.badgeValue} color="primary">
+                    <NavLink strict exact to="/cart"><li><img className="/cart" src={cart} alt="cart" ></img></li></NavLink>
 
                 </Badge>
 
@@ -79,7 +79,7 @@ export default function Nav (props) {
 
 
             </ul>
-                
+
 
 
             <Drawer anchor="right" open={state.right} onClose={toggleDrawer(false)}>
