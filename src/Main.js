@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { Link, NavLink } from 'react-router-dom'
 import './CSS/Items.css'
 import Watch from './IMAGES/Watch.png'
@@ -141,4 +142,4 @@ export class Items extends Component {
   }
 }
 
-export default withStyles(styles)(Items)
+export default connect()(withStyles(styles)(Items))

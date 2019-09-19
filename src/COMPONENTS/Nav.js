@@ -1,14 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import Drawer from '@material-ui/core/Drawer'
-import Badge from '@material-ui/core/Badge'
-import List from "@material-ui/core/List";
-import ListItem from '@material-ui/core/ListItem'
-import ListItemText from "@material-ui/core/ListItemText";
+import { connect } from 'react-redux'
+import { Drawer, Badge, List, ListItem, ListItemText } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import '../CSS/Nav.css'
 import cart from '../IMAGES/cart.svg'
 import menu from '../IMAGES/menu.svg'
+
 
 
 
@@ -19,7 +17,8 @@ const useStyles = makeStyles({
 });
 
 
-export default function Nav(props) {
+
+function Nav(props) {
 
 
     const classes = useStyles();
@@ -70,7 +69,7 @@ export default function Nav(props) {
             <ul className="items">
 
 
-                <Badge className="classes.margin" badgeContent={props.badgeValue} color="primary">
+                <Badge className="classes.margin" badgeContent={props.cart.length} color="primary">
                     <NavLink strict exact to="/cart"><li><img className="/cart" src={cart} alt="cart" ></img></li></NavLink>
 
                 </Badge>
@@ -88,7 +87,16 @@ export default function Nav(props) {
         </div>
 
     )
-
 }
 
+
+
+const mapStateToProps = (state) => {
+    return {
+        cart: state.cart
+    }
+}
+
+
+export default connect(mapStateToProps)(Nav);
 

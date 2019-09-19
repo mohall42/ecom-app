@@ -14,34 +14,13 @@ import About from './About';
 
 class App extends Component {
 
-    constructor(props) {
-        super(props)
 
-        this.state = {
-            cartValue: localStorage.getItem('cartValue'),
-
-
-        }
-
-        this.updateCartVal = this.updateCartVal.bind(this);
-    }
-
-
-
-    updateCartVal = () => {
-        let cartValue = localStorage.getItem('cartValue');
-        cartValue++;
-        localStorage.setItem('cartValue', cartValue);
-        this.setState({ cartValue: cartValue });
-
-
-    }
 
     render() {
         return (
             <Router>
 
-                <Nav badgeValue={this.state.cartValue} />
+                <Nav />
                 <Route render={({ location }) => {
                     const { pathname, key } = location;
 
@@ -80,14 +59,7 @@ class App extends Component {
     }
 
 
-    /*  return (
- 
-         <Router>
-             <Route path="/" exact component={Main} />
-             <Route path="/cart" exact component={Cart} />
-             <Route path="/about" exact component={About} />
-         </Router>
-     ) */
+
 }
 
 export default App
